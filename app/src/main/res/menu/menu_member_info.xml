@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_member_info_item_qrcode"
+        android:title="會員條碼"
+        android:icon="@drawable/baseline_qr_code_24"/>
+    <item
+        android:id="@+id/menu_member_info_item_record"
+        android:title="點餐記錄"
+        android:icon="@drawable/baseline_fiber_smart_record_24"/>
+    <item
+        android:id="@+id/menu_member_info_item_pay_info"
+        android:title="付款資訊"
+        android:icon="@drawable/baseline_payment_24"/>
+</menu>
