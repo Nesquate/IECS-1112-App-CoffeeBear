@@ -1,17 +1,21 @@
 package fcu.coffeebear.IECS_1112_App;
 
+import android.os.Bundle;
+import android.widget.Button;
+
 public class FoodItem {
-    private int imageId;
-    private String foodName;
-    private String foodIntro;
-    private int FoodPrice;
+    int imageId;
+    String foodName;
+    String foodIntro;
+    int foodPrice;
 
     public FoodItem(int imageId, String foodName, String foodIntro, int foodPrice) {
         this.imageId = imageId;
         this.foodName = foodName;
         this.foodIntro = foodIntro;
-        FoodPrice = foodPrice;
+        this.foodPrice = foodPrice;
     }
+
 
     public int getImageId() {
         return imageId;
@@ -38,10 +42,11 @@ public class FoodItem {
     }
 
     public int getFoodPrice() {
-        return FoodPrice;
+        return foodPrice;
     }
 
     public void setFoodPrice(int foodPrice) {
-        FoodPrice = foodPrice;
+        this.foodPrice = foodPrice;
     }
+
 }
