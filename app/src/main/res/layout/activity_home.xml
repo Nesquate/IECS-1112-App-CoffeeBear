@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home.HomeActivity">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:id="@+id/home_banner_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fadingEdge="vertical">
+
+            <ImageView
+                android:id="@+id/iv_banner_meal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitStart"
+                android:src="@drawable/banner_newest_meal"
+                app:srcCompat="@drawable/banner_newest_meal" />
+
+            <ImageView
+                android:id="@+id/iv_banner_activity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitStart"
+                android:src="@drawable/banner_activity"
+                app:srcCompat="@drawable/banner_activity" />
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:id="@+id/gradient_cover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/layout_image_gradient_cover"
+        android:orientation="vertical"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/layout_member_info_bg"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <LinearLayout
+                android:id="@+id/member_info_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:layout_weight="0"
+                android:gravity="center|center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/menu_menber_info_not_login_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="加入會員享有更多優惠"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/button_login"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="登入/註冊" />
+            </LinearLayout>
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/menu_home_member_info"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="10"
+                android:background="@android:color/transparent"
+                android:backgroundTintMode="src_in"
+                android:defaultFocusHighlightEnabled="false"
+                android:outlineAmbientShadowColor="@android:color/transparent"
+                android:outlineSpotShadowColor="@android:color/transparent"
+                app:backgroundTint="@android:color/transparent"
+                app:compatShadowEnabled="false"
+                app:itemIconTint="@color/color_menu_selected_white"
+                app:itemPaddingBottom="20dp"
+                app:itemPaddingTop="20dp"
+                app:itemTextColor="@color/color_menu_selected_white"
+                app:menu="@menu/menu_member_info" />
+        </LinearLayout>
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/menu_home_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:defaultFocusHighlightEnabled="false"
+            app:itemHorizontalTranslationEnabled="true"
+            app:itemIconTint="@color/color_menu_selected"
+            app:itemTextColor="@color/color_menu_selected"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/menu_home">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+    </LinearLayout>
+
+</RelativeLayout>
