@@ -12,7 +12,11 @@
         android:theme="@style/Theme.CoffeeBear"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
+            android:name=".addition.AdditionActivity"
+=======
             android:name=".home.HomeActivity"
+>>>>>>> dev
             android:exported="true" />
         <activity
             android:name=".MainActivity"
