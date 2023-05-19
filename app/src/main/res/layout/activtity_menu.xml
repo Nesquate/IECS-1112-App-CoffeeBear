@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuActivity">
+
+    <!--    上方導覽列-->
+    <LinearLayout
+        android:id="@+id/food_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/purple_500"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/category_eggroll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="蛋餅" />
+
+        <Button
+            android:id="@+id/category_burger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="漢堡" />
+
+        <Button
+            android:id="@+id/category_toast"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="吐司" />
+
+        <Button
+            android:id="@+id/category_snack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="點心" />
+
+        <Button
+            android:id="@+id/category_drinks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="飲料" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_food"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/food_category"
+        android:layout_marginTop="8dp" />
+
+    <!--    下方導覽列-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="0dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_number_orders"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_weight="3"
+            android:text="購物車有n個餐點"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/checkout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="結帳" />
+
+    </LinearLayout>
+
+</RelativeLayout>
