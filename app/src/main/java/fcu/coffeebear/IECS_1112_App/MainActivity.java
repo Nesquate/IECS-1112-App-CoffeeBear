@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import fcu.coffeebear.IECS_1112_App.order.MenuActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

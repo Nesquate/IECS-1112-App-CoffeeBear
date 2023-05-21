@@ -1,4 +1,4 @@
-package fcu.coffeebear.IECS_1112_App.model;
+package fcu.coffeebear.IECS_1112_App.order;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -37,7 +37,8 @@ public class FoodDetailActivity extends AppCompatActivity {
         btnSub = findViewById(R.id.btn_sub);
 
         Intent intent = getIntent();
-//        ivFoodImage.setImageResource(Integer.parseInt(intent.getStringExtra("foodimg")));
+        ivFoodImage.setImageResource(Integer.parseInt(intent.getStringExtra("foodImage")));
+        ivFoodImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
         tvFoodName.setText(intent.getStringExtra("foodName"));
         tvFoodIntro.setText(intent.getStringExtra("foodDescription"));
         tvFoodPrice.setText("$ " + intent.getStringExtra("foodPrice"));

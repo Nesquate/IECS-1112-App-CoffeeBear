@@ -1,7 +1,4 @@
-package fcu.coffeebear.IECS_1112_App;
-
-import android.os.Bundle;
-import android.widget.Button;
+package fcu.coffeebear.IECS_1112_App.model;
 
 public class FoodItem {
     int imageId;
