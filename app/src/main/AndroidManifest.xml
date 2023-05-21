@@ -12,6 +12,7 @@
         android:theme="@style/Theme.CoffeeBear"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
             android:name=".order.MenuActivity"
             android:exported="false">
             <meta-data
@@ -19,6 +20,10 @@
                 android:value="" />
         </activity>
 
+=======
+            android:name=".home.HomeActivity"
+            android:exported="true" />
+>>>>>>> d70891ab3c28c5b87fe897b4c70afb5fcd3630da
         <activity
             android:name=".MainActivity"
             android:exported="true">

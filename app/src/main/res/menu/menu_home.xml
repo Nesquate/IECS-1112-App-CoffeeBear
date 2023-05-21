@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_home_item_cart"
+        android:enabled="true"
+        android:icon="@drawable/baseline_shopping_cart_24"
+        android:title="購物車" />
+    <item
+        android:id="@+id/menu_home_item_shop"
+        android:enabled="true"
+        android:icon="@drawable/baseline_store_mall_directory_24"
+        android:title="店家" />
+    <item
+        android:id="@+id/menu_home_item_meals"
+        android:enabled="true"
+        android:icon="@drawable/baseline_restaurant_menu_24"
+        android:title="點餐" />
+    <item
+        android:id="@+id/menu_home_item_members"
+        android:enabled="true"
+        android:icon="@drawable/baseline_supervisor_account_24"
+        android:title="會員" />
+    <item
+        android:id="@+id/menu_home_item_activities"
+        android:enabled="true"
+        android:icon="@drawable/baseline_calendar_month_24"
+        android:title="活動列表" />
+</menu>
