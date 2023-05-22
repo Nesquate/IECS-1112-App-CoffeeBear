@@ -12,23 +12,19 @@
         android:theme="@style/Theme.CoffeeBear"
         tools:targetApi="31">
         <activity
-<<<<<<< HEAD
-<<<<<<< HEAD
             android:name=".order.MenuActivity"
+            android:label="菜單"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
-=======
-            android:name=".addition.AdditionActivity"
->>>>>>> 67350c98094f3ab22c05c396f06842056ad047ff
-=======
+        <activity
             android:name=".home.HomeActivity"
->>>>>>> dev
-            android:exported="true" />
->>>>>>> d70891ab3c28c5b87fe897b4c70afb5fcd3630da
+            android:exported="true"/>
+        <activity
+            android:name=".addition.AdditionActivity"
+            android:exported="true"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -41,7 +37,7 @@
 
         <activity
             android:name=".order.FoodDetailActivity"
-            android:label="Food Detail"
+            android:label="餐點內容"
             android:parentActivityName=".order.MenuActivity" />
 
 

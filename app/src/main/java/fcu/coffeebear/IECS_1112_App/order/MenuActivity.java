@@ -28,6 +28,8 @@ public class MenuActivity extends AppCompatActivity implements MenuContract.Menu
 
     private FoodAdapter adapter;
 
+    int categoryId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +47,9 @@ public class MenuActivity extends AppCompatActivity implements MenuContract.Menu
         adapter = new FoodAdapter(this, foodItems);
         lvFoods.setAdapter(adapter);
 
-        menuPresenter.loadFoodItems(1);
+        if (categoryId <= 0 || categoryId > 5)
+            categoryId = 1;
+        menuPresenter.loadFoodItems(categoryId);
 
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
@@ -53,22 +57,26 @@ public class MenuActivity extends AppCompatActivity implements MenuContract.Menu
 
                 switch (v.getId()) {
                     case R.id.category_eggroll:
-                        menuPresenter.loadFoodItems(1);
+                        categoryId = 1;
+                        menuPresenter.loadFoodItems(categoryId);
                         break;
                     case R.id.category_burger:
-                        menuPresenter.loadFoodItems(2);
+                        categoryId = 2;
+                        menuPresenter.loadFoodItems(categoryId);
                         break;
                     case R.id.category_toast:
-                        menuPresenter.loadFoodItems(3);
+                        categoryId = 3;
+                        menuPresenter.loadFoodItems(categoryId);
                         break;
                     case R.id.category_snack:
-                        menuPresenter.loadFoodItems(4);
+                        categoryId = 4;
+                        menuPresenter.loadFoodItems(categoryId);
                         break;
                     case R.id.category_drinks:
-                        menuPresenter.loadFoodItems(5);
+                        categoryId = 5;
+                        menuPresenter.loadFoodItems(categoryId);
                         break;
                 }
-
             }
         };
 
@@ -81,11 +89,9 @@ public class MenuActivity extends AppCompatActivity implements MenuContract.Menu
         AdapterView.OnItemClickListener onItemClickListener = new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
                 menuPresenter.selectedFoodItem(position);
             }
         };
-
 
         lvFoods.setOnItemClickListener(onItemClickListener);
     }

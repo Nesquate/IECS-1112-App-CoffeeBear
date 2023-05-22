@@ -49,14 +49,14 @@ public class FoodAdapter extends BaseAdapter{
 
         ImageView iv = view.findViewById(R.id.iv_food_image);
         iv.setImageResource(food.getImageId());
-        iv.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        iv.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         iv.setAdjustViewBounds(true);
 
         TextView tvFoodName = view.findViewById(R.id.tv_food_name);
         tvFoodName.setText(food.getFoodName());
 
         TextView tvFoodPrice = view.findViewById(R.id.tv_food_price);
-        tvFoodPrice.setText("$ "+String.valueOf(food.getFoodPrice()));
+        tvFoodPrice.setText("$ "+ String.valueOf(food.getFoodPrice()));
 
         return view;
     }
