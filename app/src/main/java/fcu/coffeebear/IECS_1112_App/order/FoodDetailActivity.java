@@ -42,6 +42,7 @@ public class FoodDetailActivity extends AppCompatActivity {
         tvFoodName.setText(intent.getStringExtra("foodName"));
         tvFoodIntro.setText(intent.getStringExtra("foodDescription"));
         tvFoodPrice.setText("$ " + intent.getStringExtra("foodPrice"));
+        setTitle("詳細選項");
 
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
