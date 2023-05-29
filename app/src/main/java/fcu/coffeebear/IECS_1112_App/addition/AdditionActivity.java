@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -20,9 +22,17 @@ public class AdditionActivity extends AppCompatActivity implements AdditionContr
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addition);
 
+        // Generate new bundle
+        Intent intent = getIntent();
+        Bundle bundle = new Bundle();
+
+        bundle.putString("foodName", intent.getStringExtra("foodName"));
+        bundle.putString("foodDescription", intent.getStringExtra("foodDescription"));
+        bundle.putString("foodImage", intent.getStringExtra("foodImage"));
+
         setTitle("其他選項");
 
-        presenter = new AdditionPresenter(this, new AdditionRepository());
+        presenter = new AdditionPresenter(this, new AdditionRepository(bundle));
         presenter.getInformation("1");
     }
 
@@ -88,5 +98,12 @@ public class AdditionActivity extends AppCompatActivity implements AdditionContr
             recyclerView.setAdapter(new AdditionViewAdapter(dataList));
         }
 
+    }
+
+    @Override
+    public void showImage(Integer imageId) {
+        ImageView imageView = findViewById(R.id.iv_addition_meal_image);
+        imageView.setImageResource(imageId);
+        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
     }
 }
