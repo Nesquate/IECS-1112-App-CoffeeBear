@@ -25,6 +25,8 @@ import java.util.Objects;
 import fcu.coffeebear.IECS_1112_App.R;
 import fcu.coffeebear.IECS_1112_App.model.HomeRepository;
 import fcu.coffeebear.IECS_1112_App.order.MenuActivity;
+import fcu.coffeebear.IECS_1112_App.party.PartyActivity;
+
 
 public class HomeActivity extends AppCompatActivity implements HomeContract.IHomeView {
 
@@ -47,6 +49,9 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.IHom
         bottomNavigationView.setOnItemSelectedListener(item -> {
             if(item.getItemId() == R.id.menu_home_item_meals){
                 startActivity(new Intent(this, MenuActivity.class));
+                return true;
+            } else if (item.getItemId() == R.id.menu_home_item_activities){
+                startActivity(new Intent(this, PartyActivity.class));
                 return true;
             }
             return false;
