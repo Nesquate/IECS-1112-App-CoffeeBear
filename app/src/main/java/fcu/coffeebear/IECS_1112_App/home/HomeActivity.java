@@ -27,6 +27,7 @@ import fcu.coffeebear.IECS_1112_App.model.HomeRepository;
 import fcu.coffeebear.IECS_1112_App.order.MenuActivity;
 import fcu.coffeebear.IECS_1112_App.party.PartyActivity;
 
+
 public class HomeActivity extends AppCompatActivity implements HomeContract.IHomeView {
 
     private HomeRepository repository;
