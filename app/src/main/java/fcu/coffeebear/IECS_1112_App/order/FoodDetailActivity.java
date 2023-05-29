@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import fcu.coffeebear.IECS_1112_App.R;
+import fcu.coffeebear.IECS_1112_App.addition.AdditionActivity;
 
 public class FoodDetailActivity extends AppCompatActivity {
 
@@ -20,6 +21,8 @@ public class FoodDetailActivity extends AppCompatActivity {
     private TextView tvFoodNumber;
     private Button btnAdd;
     private Button btnSub;
+
+    private Button btnAdditional;
 
     int count = 1;
 
@@ -35,6 +38,7 @@ public class FoodDetailActivity extends AppCompatActivity {
         tvFoodNumber = findViewById(R.id.tv_food_num);
         btnAdd = findViewById(R.id.btn_add);
         btnSub = findViewById(R.id.btn_sub);
+        btnAdditional = findViewById(R.id.btn_additional);
 
         Intent intent = getIntent();
         ivFoodImage.setImageResource(Integer.parseInt(intent.getStringExtra("foodImage")));
@@ -42,6 +46,7 @@ public class FoodDetailActivity extends AppCompatActivity {
         tvFoodName.setText(intent.getStringExtra("foodName"));
         tvFoodIntro.setText(intent.getStringExtra("foodDescription"));
         tvFoodPrice.setText("$ " + intent.getStringExtra("foodPrice"));
+        setTitle("詳細選項");
 
         View.OnClickListener listener = new View.OnClickListener() {
             @Override
@@ -60,5 +65,17 @@ public class FoodDetailActivity extends AppCompatActivity {
 
         btnAdd.setOnClickListener(listener);
         btnSub.setOnClickListener(listener);
+
+        btnAdditional.setOnClickListener(v -> {
+            Intent intent1 = new Intent(this, AdditionActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("foodImage", intent.getStringExtra("foodImage"));
+            bundle.putString("foodName", intent.getStringExtra("foodName"));
+            bundle.putString("foodDescription", intent.getStringExtra("foodDescription"));
+
+            intent1.putExtras(bundle);
+
+            startActivity(intent1);
+        });
     }
 }

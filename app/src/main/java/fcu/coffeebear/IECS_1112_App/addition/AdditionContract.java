@@ -7,6 +7,7 @@ public interface AdditionContract {
     interface IAdditionView {
         void showInfo(String name, String description);
         void showList(ArrayList<HashMap<String, String>> dataList);
+        void showImage(Integer imageId);
     }
 
     interface IAdditionPresenter {
