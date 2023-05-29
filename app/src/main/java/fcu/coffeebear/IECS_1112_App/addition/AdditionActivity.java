@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -34,6 +35,12 @@ public class AdditionActivity extends AppCompatActivity implements AdditionContr
 
         presenter = new AdditionPresenter(this, new AdditionRepository(bundle));
         presenter.getInformation("1");
+        Button btnFinish = findViewById(R.id.btn_addition_confirm);
+
+        btnFinish.setOnClickListener(v -> {
+            // TODO: Send additional data back to food details.
+            AdditionActivity.this.finish();
+        });
     }
 
 //    private ArrayList<HashMap<String, String>> makeFakeData(){
