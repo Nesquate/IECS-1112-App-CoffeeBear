@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fcu.coffeebear.IECS_1112_App.R;
+import fcu.coffeebear.IECS_1112_App.checkout.CheckoutActivity;
 import fcu.coffeebear.IECS_1112_App.model.FoodItem;
 
 public class MenuActivity extends AppCompatActivity implements MenuContract.MenuView {
@@ -41,6 +42,7 @@ public class MenuActivity extends AppCompatActivity implements MenuContract.Menu
         btnToast = findViewById(R.id.category_toast);
         btnSnack = findViewById(R.id.category_snack);
         btnDrink = findViewById(R.id.category_drinks);
+        btnCheckOut = findViewById(R.id.btn_checkout);
 
         List<FoodItem> foodItems = new ArrayList<FoodItem>();
         MenuContract.MenuPresenter menuPresenter = new FoodPresenter(this,MenuActivity.this);
@@ -76,6 +78,9 @@ public class MenuActivity extends AppCompatActivity implements MenuContract.Menu
                         categoryId = 5;
                         menuPresenter.loadFoodItems(categoryId);
                         break;
+                    case R.id.btn_checkout:
+                        Intent intent = new Intent(MenuActivity.this, CheckoutActivity.class);
+                        startActivity(intent);
                 }
             }
         };
@@ -85,6 +90,7 @@ public class MenuActivity extends AppCompatActivity implements MenuContract.Menu
         btnToast.setOnClickListener(listener);
         btnSnack.setOnClickListener(listener);
         btnDrink.setOnClickListener(listener);
+        btnCheckOut.setOnClickListener(listener);
 
         AdapterView.OnItemClickListener onItemClickListener = new AdapterView.OnItemClickListener() {
             @Override
