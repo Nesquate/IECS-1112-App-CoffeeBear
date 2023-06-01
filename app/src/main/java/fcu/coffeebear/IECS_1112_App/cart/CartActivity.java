@@ -11,6 +11,7 @@ import java.util.HashMap;
 
 import fcu.coffeebear.IECS_1112_App.R;
 import fcu.coffeebear.IECS_1112_App.model.CartRepository;
+import fcu.coffeebear.IECS_1112_App.model.Repositories;
 
 public class CartActivity extends AppCompatActivity implements CartContract.ICartView {
     private CartContract.ICartPresenter presenter;
@@ -19,7 +20,7 @@ public class CartActivity extends AppCompatActivity implements CartContract.ICar
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
 
-        presenter = new CartPresenter(this, new CartRepository());
+        presenter = new CartPresenter(this, Repositories.CART_REPOSITORY);
         presenter.getCartData();
 
         setTitle("購物車");

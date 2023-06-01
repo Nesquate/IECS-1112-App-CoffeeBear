@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +15,7 @@ import java.util.List;
 
 import fcu.coffeebear.IECS_1112_App.R;
 import fcu.coffeebear.IECS_1112_App.model.FoodItem;
+import fcu.coffeebear.IECS_1112_App.model.Repositories;
 
 public class MenuActivity extends AppCompatActivity implements MenuContract.MenuView {
 
@@ -27,6 +29,7 @@ public class MenuActivity extends AppCompatActivity implements MenuContract.Menu
     private Button btnCheckOut;
 
     private FoodAdapter adapter;
+    private TextView tvFoodNumberOrders;
 
     int categoryId;
 
@@ -41,6 +44,7 @@ public class MenuActivity extends AppCompatActivity implements MenuContract.Menu
         btnToast = findViewById(R.id.category_toast);
         btnSnack = findViewById(R.id.category_snack);
         btnDrink = findViewById(R.id.category_drinks);
+        tvFoodNumberOrders = findViewById(R.id.tv_number_orders);
 
         List<FoodItem> foodItems = new ArrayList<FoodItem>();
         MenuContract.MenuPresenter menuPresenter = new FoodPresenter(this,MenuActivity.this);
@@ -94,6 +98,7 @@ public class MenuActivity extends AppCompatActivity implements MenuContract.Menu
         };
 
         lvFoods.setOnItemClickListener(onItemClickListener);
+        tvFoodNumberOrders.setText("購物車內有"+ Repositories.CART_REPOSITORY.getTotal() + "個餐點");
     }
 
     @Override
