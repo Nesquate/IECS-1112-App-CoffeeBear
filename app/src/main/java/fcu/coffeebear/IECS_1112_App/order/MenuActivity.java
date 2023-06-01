@@ -98,7 +98,7 @@ public class MenuActivity extends AppCompatActivity implements MenuContract.Menu
         };
 
         lvFoods.setOnItemClickListener(onItemClickListener);
-        tvFoodNumberOrders.setText("購物車內有"+ Repositories.CART_REPOSITORY.getTotal() + "個餐點");
+        tvFoodNumberOrders.setText("購物車內有"+ Repositories.CART_REPOSITORY.getCount() + "個餐點");
     }
 
     @Override

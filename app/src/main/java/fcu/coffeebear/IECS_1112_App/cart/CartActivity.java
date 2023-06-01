@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,4 +33,11 @@ public class CartActivity extends AppCompatActivity implements CartContract.ICar
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new CartViewAdapter(cartList));
     }
+
+    @Override
+    public void updateTotalPrice(String price) {
+        TextView tvPrice = findViewById(R.id.tv_cart_total_price);
+        tvPrice.setText(price);
+    }
+
 }
