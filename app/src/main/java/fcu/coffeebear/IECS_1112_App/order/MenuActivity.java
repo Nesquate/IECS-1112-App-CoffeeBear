@@ -102,6 +102,12 @@ public class MenuActivity extends AppCompatActivity implements MenuContract.Menu
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        tvFoodNumberOrders.setText("購物車內有"+ Repositories.CART_REPOSITORY.getCount() + "個餐點");
+    }
+
+    @Override
     public void displayFoodItem(List<FoodItem> foodItems) {
         adapter.updateFoodItems(foodItems);
     }

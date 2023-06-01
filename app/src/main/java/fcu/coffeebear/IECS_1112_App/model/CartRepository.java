@@ -28,7 +28,7 @@ public class CartRepository {
     }
 
     public ArrayList<HashMap<String, Object>> getCartList(){
-        generateFakeData();
+//        generateFakeData();
         return new ArrayList<>(cartList);
     }
 

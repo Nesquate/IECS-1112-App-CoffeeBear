@@ -87,6 +87,7 @@ public class FoodDetailActivity extends AppCompatActivity {
 
         btnAddToCart.setOnClickListener(v -> {
             // TODO: 待購物車實做完成後將其串連
+            Repositories.CART_REPOSITORY.addToCart(foodName, foodPrice, String.valueOf(count));
             this.finish();
         });
     }
