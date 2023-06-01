@@ -23,6 +23,10 @@ public class FoodDetailActivity extends AppCompatActivity {
     private Button btnSub;
 
     private Button btnAdditional;
+    private Button btnAddToCart;
+    private String foodName;
+    private String foodPrice;
+    private MenuContract.MenuPresenter presenter;
 
     int count = 1;
 
@@ -39,13 +43,16 @@ public class FoodDetailActivity extends AppCompatActivity {
         btnAdd = findViewById(R.id.btn_add);
         btnSub = findViewById(R.id.btn_sub);
         btnAdditional = findViewById(R.id.btn_additional);
+        btnAddToCart = findViewById(R.id.btn_add_to_cart);
 
         Intent intent = getIntent();
+        foodName = intent.getStringExtra("foodName");
+        foodPrice = intent.getStringExtra("foodPrice");
         ivFoodImage.setImageResource(Integer.parseInt(intent.getStringExtra("foodImage")));
         ivFoodImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        tvFoodName.setText(intent.getStringExtra("foodName"));
+        tvFoodName.setText(foodName);
         tvFoodIntro.setText(intent.getStringExtra("foodDescription"));
-        tvFoodPrice.setText("$ " + intent.getStringExtra("foodPrice"));
+        tvFoodPrice.setText("$ " + foodPrice);
         setTitle("詳細選項");
 
         View.OnClickListener listener = new View.OnClickListener() {
@@ -76,6 +83,11 @@ public class FoodDetailActivity extends AppCompatActivity {
             intent1.putExtras(bundle);
 
             startActivity(intent1);
+        });
+
+        btnAddToCart.setOnClickListener(v -> {
+            // TODO: 待購物車實做完成後將其串連
+            this.finish();
         });
     }
 }
