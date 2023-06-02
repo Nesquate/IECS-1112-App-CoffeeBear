@@ -1,7 +1,5 @@
-package fcu.coffeebear.IECS_1112_App.Store;
+package fcu.coffeebear.IECS_1112_App.store;
 
-
-import android.widget.ListView;
 
 import java.util.List;
 

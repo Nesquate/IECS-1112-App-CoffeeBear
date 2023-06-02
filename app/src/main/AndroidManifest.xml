@@ -61,7 +61,7 @@
             android:name=".order.FoodDetailActivity"
             android:label="餐點內容" />
         <activity
-            android:name=".Store.SelectStoreActivity"
+            android:name=".store.SelectStoreActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

@@ -33,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_oder_number" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/rv_meals"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -48,9 +48,9 @@
         android:layout_marginTop="16dp"
         android:text="選擇店家區域"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/recyclerView"
-        app:layout_constraintStart_toStartOf="@+id/recyclerView"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+        app:layout_constraintEnd_toEndOf="@+id/rv_meals"
+        app:layout_constraintStart_toStartOf="@+id/rv_meals"
+        app:layout_constraintTop_toBottomOf="@+id/rv_meals" />
 
     <Button
         android:id="@+id/btn_select_store"

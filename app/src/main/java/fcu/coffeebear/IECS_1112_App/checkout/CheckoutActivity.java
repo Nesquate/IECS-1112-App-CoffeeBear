@@ -1,6 +1,8 @@
 package fcu.coffeebear.IECS_1112_App.checkout;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,12 +12,16 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 
 import fcu.coffeebear.IECS_1112_App.R;
-import fcu.coffeebear.IECS_1112_App.Store.SelectStoreActivity;
+import fcu.coffeebear.IECS_1112_App.cart.CartContract;
+import fcu.coffeebear.IECS_1112_App.cart.CartViewAdapter;
+import fcu.coffeebear.IECS_1112_App.store.SelectStoreActivity;
 
-public class CheckoutActivity extends AppCompatActivity {
+public class CheckoutActivity extends AppCompatActivity implements CartContract.ICartView {
 
     TextView tvOrderNum;
     TextView tvStore;
@@ -26,6 +32,7 @@ public class CheckoutActivity extends AppCompatActivity {
     LinearLayout llCreditCard;
 
     int orderNum;
+    private CartContract.ICartPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,5 +78,17 @@ public class CheckoutActivity extends AppCompatActivity {
         rbCash.setOnClickListener(listener);
         rbCreditCard.setOnClickListener(listener);
         btnNext.setOnClickListener(listener);
+    }
+
+    @Override
+    public void showCartList(ArrayList<HashMap<String, Object>> cartList) {
+        RecyclerView recyclerView = findViewById(R.id.list_cart);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(new CartViewAdapter(cartList));
+    }
+
+    @Override
+    public void updateTotalPrice(String price) {
+
     }
 }

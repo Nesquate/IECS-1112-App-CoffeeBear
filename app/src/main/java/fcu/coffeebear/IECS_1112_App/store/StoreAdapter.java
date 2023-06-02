@@ -1,17 +1,15 @@
-package fcu.coffeebear.IECS_1112_App.Store;
+package fcu.coffeebear.IECS_1112_App.store;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
 
 import fcu.coffeebear.IECS_1112_App.R;
-import fcu.coffeebear.IECS_1112_App.model.FoodItem;
 import fcu.coffeebear.IECS_1112_App.model.StoreInfo;
 
 

@@ -1,4 +1,4 @@
-package fcu.coffeebear.IECS_1112_App.Store;
+package fcu.coffeebear.IECS_1112_App.store;
 
 import androidx.appcompat.app.AppCompatActivity;
 
