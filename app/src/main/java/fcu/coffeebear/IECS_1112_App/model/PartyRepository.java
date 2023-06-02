@@ -1,7 +1,12 @@
 package fcu.coffeebear.IECS_1112_App.model;
 
+import android.os.Bundle;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+
+import fcu.coffeebear.IECS_1112_App.R;
 
 public class PartyRepository {
 

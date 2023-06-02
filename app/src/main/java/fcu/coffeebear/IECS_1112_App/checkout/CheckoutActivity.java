@@ -13,13 +13,16 @@ import android.widget.TextView;
 import java.util.Random;
 
 import fcu.coffeebear.IECS_1112_App.R;
+import fcu.coffeebear.IECS_1112_App.Store.SelectStoreActivity;
 
 public class CheckoutActivity extends AppCompatActivity {
 
     TextView tvOrderNum;
+    TextView tvStore;
     RadioButton rbCreditCard;
     RadioButton rbCash;
     Button btnNext;
+    Button btnSelectStore;
     LinearLayout llCreditCard;
 
     int orderNum;
@@ -32,6 +35,7 @@ public class CheckoutActivity extends AppCompatActivity {
         tvOrderNum = findViewById(R.id.tv_oder_number);
         rbCreditCard = findViewById(R.id.rb_credit_card);
         rbCash = findViewById(R.id.rb_cash);
+        btnSelectStore = findViewById(R.id.btn_select_store);
         btnNext = findViewById(R.id.btn_next);
         llCreditCard = findViewById(R.id.ll_credit_card);
 
@@ -46,6 +50,10 @@ public class CheckoutActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+                if (v.getId() == R.id.btn_select_store) {
+                    Intent intent = new Intent(CheckoutActivity.this, SelectStoreActivity.class);
+                    startActivity(intent);
+                }
                 if (v.getId() == R.id.rb_credit_card) {
                     llCreditCard.setVisibility(View.VISIBLE);
                 }
@@ -59,6 +67,7 @@ public class CheckoutActivity extends AppCompatActivity {
             }
         };
 
+        btnSelectStore.setOnClickListener(listener);
         rbCash.setOnClickListener(listener);
         rbCreditCard.setOnClickListener(listener);
         btnNext.setOnClickListener(listener);
