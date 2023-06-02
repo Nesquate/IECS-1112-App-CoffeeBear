@@ -43,8 +43,9 @@
         android:id="@+id/iv_addition_meal_image_bg"
         android:layout_width="0dp"
         android:layout_height="225dp"
+        android:layout_marginBottom="1dp"
         android:background="@drawable/layout_image_gradient_cover"
-        app:layout_constraintBottom_toBottomOf="@+id/lo_addition_bottom"
+        app:layout_constraintBottom_toTopOf="@+id/rv_addition"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,21 +73,22 @@
         android:text="餐點描述"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_addition_meal_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.242" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_addition_meal_name"
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_addition"
         android:layout_width="409dp"
-        android:layout_height="456dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="1dp"
         android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toTopOf="@+id/lo_addition_bottom"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_addition_meal_image" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_addition_meal_image"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
