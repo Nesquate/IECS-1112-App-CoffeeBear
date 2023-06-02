@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import fcu.coffeebear.IECS_1112_App.R;
 import fcu.coffeebear.IECS_1112_App.addition.AdditionActivity;
+import fcu.coffeebear.IECS_1112_App.model.Repositories;
 
 public class FoodDetailActivity extends AppCompatActivity {
 
@@ -26,7 +27,6 @@ public class FoodDetailActivity extends AppCompatActivity {
     private Button btnAddToCart;
     private String foodName;
     private String foodPrice;
-    private MenuContract.MenuPresenter presenter;
 
     int count = 1;
 
@@ -87,6 +87,7 @@ public class FoodDetailActivity extends AppCompatActivity {
 
         btnAddToCart.setOnClickListener(v -> {
             // TODO: 待購物車實做完成後將其串連
+            Repositories.CART_REPOSITORY.addToCart(foodName, foodPrice, String.valueOf(count));
             this.finish();
         });
     }

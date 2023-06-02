@@ -23,6 +23,7 @@ import java.util.HashMap;
 import java.util.Objects;
 
 import fcu.coffeebear.IECS_1112_App.R;
+import fcu.coffeebear.IECS_1112_App.cart.CartActivity;
 import fcu.coffeebear.IECS_1112_App.model.HomeRepository;
 import fcu.coffeebear.IECS_1112_App.order.MenuActivity;
 import fcu.coffeebear.IECS_1112_App.party.PartyActivity;
@@ -52,6 +53,9 @@ public class HomeActivity extends AppCompatActivity implements HomeContract.IHom
                 return true;
             } else if (item.getItemId() == R.id.menu_home_item_activities){
                 startActivity(new Intent(this, PartyActivity.class));
+                return true;
+            } else if (item.getItemId() == R.id.menu_home_item_cart){
+                startActivity(new Intent(this, CartActivity.class));
                 return true;
             }
             return false;
