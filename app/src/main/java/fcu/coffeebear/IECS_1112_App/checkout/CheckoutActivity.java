@@ -24,6 +24,7 @@ import fcu.coffeebear.IECS_1112_App.store.SelectStoreActivity;
 public class CheckoutActivity extends AppCompatActivity implements CartContract.ICartView {
 
     TextView tvOrderNum;
+    TextView tvPrice;
     TextView tvStore;
     RadioButton rbCreditCard;
     RadioButton rbCash;
@@ -40,6 +41,8 @@ public class CheckoutActivity extends AppCompatActivity implements CartContract.
         setContentView(R.layout.activity_checkout);
 
         tvOrderNum = findViewById(R.id.tv_oder_number);
+        tvPrice = findViewById(R.id.tv_total_price);
+        tvStore = findViewById(R.id.tv_store);
         rbCreditCard = findViewById(R.id.rb_credit_card);
         rbCash = findViewById(R.id.rb_cash);
         btnSelectStore = findViewById(R.id.btn_select_store);
@@ -57,10 +60,10 @@ public class CheckoutActivity extends AppCompatActivity implements CartContract.
 
             @Override
             public void onClick(View v) {
-                if (v.getId() == R.id.btn_select_store) {
-                    Intent intent = new Intent(CheckoutActivity.this, SelectStoreActivity.class);
-                    startActivity(intent);
-                }
+//                if (v.getId() == R.id.btn_select_store) {
+//                    Intent intent = new Intent(CheckoutActivity.this, SelectStoreActivity.class);
+//                    startActivity(intent);
+//                }
                 if (v.getId() == R.id.rb_credit_card) {
                     llCreditCard.setVisibility(View.VISIBLE);
                 }
@@ -74,7 +77,7 @@ public class CheckoutActivity extends AppCompatActivity implements CartContract.
             }
         };
 
-        btnSelectStore.setOnClickListener(listener);
+//        btnSelectStore.setOnClickListener(listener);
         rbCash.setOnClickListener(listener);
         rbCreditCard.setOnClickListener(listener);
         btnNext.setOnClickListener(listener);
@@ -82,13 +85,13 @@ public class CheckoutActivity extends AppCompatActivity implements CartContract.
 
     @Override
     public void showCartList(ArrayList<HashMap<String, Object>> cartList) {
-        RecyclerView recyclerView = findViewById(R.id.list_cart);
+        RecyclerView recyclerView = findViewById(R.id.rv_meals);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new CartViewAdapter(cartList));
     }
 
     @Override
     public void updateTotalPrice(String price) {
-
+        tvPrice.setText("總金額：" + price + "元");
     }
 }
