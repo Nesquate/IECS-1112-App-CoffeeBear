@@ -2,6 +2,7 @@ package fcu.coffeebear.IECS_1112_App.addition;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Objects;
 
 import fcu.coffeebear.IECS_1112_App.model.AdditionRepository;
 
@@ -21,6 +22,10 @@ public class AdditionPresenter implements AdditionContract.IAdditionPresenter{
 
         if(data == null || data.size() == 0){
             throw new RuntimeException();
+        }
+
+        if(!Objects.equals(data.get("image"), "") && data.get("image") != null){
+            view.showImage(Integer.parseInt(Objects.requireNonNull(data.get("image"))));
         }
 
         view.showInfo(data.get("name"), data.get("description"));
