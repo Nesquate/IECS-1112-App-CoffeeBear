@@ -60,7 +60,7 @@ public class CheckoutActivity extends AppCompatActivity {
 
         CheckoutCartAdapter adapter = new CheckoutCartAdapter(Repositories.CART_REPOSITORY.getCartList());
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter.notifyDataSetChanged();
+//        adapter.notifyDataSetChanged();
         recyclerView.setAdapter(adapter);
 
         totalPrice = adapter.getTotalPrice();
