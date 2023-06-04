@@ -21,13 +21,6 @@
             android:name=".party.PartyActivity"
             android:exported="true" />
         <activity
-            android:name=".checkout.CheckoutActivity2"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".checkout.CheckoutActivity"
             android:exported="false">
             <meta-data

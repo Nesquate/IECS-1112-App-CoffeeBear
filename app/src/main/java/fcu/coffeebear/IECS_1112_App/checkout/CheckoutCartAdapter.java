@@ -24,8 +24,16 @@ public class CheckoutCartAdapter extends RecyclerView.Adapter<CheckoutCartViewHo
     @NonNull
     @Override
     public CheckoutCartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_checkout_cartitem, parent, false);
-        return new CheckoutCartViewHolder(view);
+//        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_checkout_cartitem, parent, false);
+//        return new CheckoutCartViewHolder(view);
+        return new CheckoutCartViewHolder(
+                LayoutInflater.from(parent.getContext())
+                        .inflate(
+                                R.layout.item_checkout_cartitem,
+                                parent,
+                                false
+                        )
+        );
     }
 
     @Override
